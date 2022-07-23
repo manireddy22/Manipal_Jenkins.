@@ -1,6 +1,6 @@
 #! /bin/bash
 visible = $4
-if [ "$visible" = "True"];
+if [ "$visible" = "true"];then
 	echo "Username: $1";
 	echo "Age: $2";
 	echo "Full Name: $3";
