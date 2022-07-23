@@ -1,5 +1,5 @@
 #! /bin/bash
-visible = $4
+visible=$4
 if [ "$visible" = "true"]; then
 	echo "Username: $1";
 	echo "Age: $2";
