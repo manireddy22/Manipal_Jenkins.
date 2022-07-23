@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Hello World"
-echo "hello jenkins"
+echo "hello from jenkins"
