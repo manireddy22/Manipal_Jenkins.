@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "Hello World"
-<<<<<<< HEAD
-echo "hello jenkins"
-=======
-echo "hello from jenkins"
->>>>>>> 24c0230b45cab39c01524024364ccd6f65a29d06

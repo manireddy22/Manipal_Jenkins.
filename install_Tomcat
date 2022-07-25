@@ -1,0 +1,41 @@
+install Tomcat on linux/unix box and configure with jenkins.
+
+Step1: install java
+sudo apt-get update
+sudo apt-get install default-jdk
+
+
+Step2: Install Tomcat
+
+sudo apt install unizp wget
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.zip
+sudo mkdir -p /opttomcat
+sudo mv apache-tomcat-8.5.81 /opt/tomcat/
+
+step3: change Tomcat server port
+jenkins is running as port 8080; and tomcat default port - 808. So we need to change the tomcat port, i am changing it to 9090.
+
+Go to /opt/tomcat/apache-tomcat-8-5-81/conf/server.xml file
+search for  connector and change the port value, save the file
+
+step4: change permission of scripts in /bin
+cd /opt/tomcat./apache-tomcat-8.5.47/bin
+ls -la
+sudo chmod +x *
+
+
+step5 ; Start tomcat server and accesss via browser on port 9090
+/opt/tomcat/apache-tomcat-8-5-51/bin/startup.sh
+
+step6 : Configure jenkins with tomcat for auto deployment of artifacts.
+set credentials of tomcat that jenkins use.
+cd /opt/tomcat/apache-tomcat-8.5.51 /conf
+
+update tomcat-users.xml file
+
+roles : manager-script and admin gui 
+set password : tomcat
+
+step6 : Restart the tomcat server
+/opt/tomcat/apache-tomcat-8.5.51 /bin/shutdown.sh
+/opt/tomcat/apache-tomcat-8.5.51 /bin/startup.sh
